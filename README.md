@@ -13,7 +13,7 @@ Laundry Management System design with help of firebase. uer can login user fireb
 This app maintain all customer of user and record of all customer using firestore.
 
 ## GIF
-<img src="https://github.com/webaddicted/LoginUiDesign/raw/main/screenshot/fun.gif" width="705">
+<img src="https://github.com/webaddicted/LoginUiDesign/raw/main/screenshot/fun.webp" width="705">
 
 
 

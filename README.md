@@ -19,7 +19,7 @@ This app maintain all customer of user and record of all customer using firestor
 
 ## Login Page
 
-<img src="https://github.com/webaddicted/LaundryManagementSystem/raw/main/screenshot/login.jpg" height="500">
+<img src="https://github.com/webaddicted/LoginUiDesign/raw/main/screenshot/login.jpg" height="500">
 
 
 ## LICENSE

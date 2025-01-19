@@ -25,58 +25,57 @@ class _login_screenState extends State<login_screen> {
     return Scaffold(
       backgroundColor:
           currentStep == 1 ? Colors.grey.shade200 : ColorConst.blue,
-      body: Container(
-        child: Stack(
-            children: [
-              if (currentStep == 1)
-                ClipPath(
-                  clipper: TopWaveClipper(),
-                  child: Container(
-                    color: Colors.blueAccent,
-                    height: 400,
+      body: Stack(
+        children: [
+          if (currentStep == 1)
+            ClipPath(
+              clipper: TopWaveClipper(),
+              child: Container(
+                color: Colors.blueAccent,
+                height: 400,
+              ),
+            ),
+          Container(
+            margin: const EdgeInsets.only(top: 50),
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 80,
+                  child: Row(
+                    children: [
+                      const SizedBox(width: 20),
+                      InkWell(
+                          onTap: () {
+                            if (currentStep == 1) {
+                            } else if (currentStep >= 1) {
+                              setState(() {
+                                currentStep = currentStep - 1;
+                              });
+                            }
+                          },
+                          child: Icon(Icons.arrow_back,
+                              color: ColorConst.WHITE_COLOR)),
+                      const SizedBox(width: 20),
+                      getTxtWhiteColor(
+                          msg: str_const.create_account,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w700)
+                    ],
                   ),
                 ),
-              Container(
-                margin: const EdgeInsets.only(top: 50),
-                child: Column(
+                Column(
                   children: [
-                    SizedBox(
-                      height: 80,
-                      child: Row(
-                        children: [
-                          const SizedBox(width: 20),
-                          InkWell(
-                              onTap: (){
-                                if(currentStep==1){
-                                }else if(currentStep>=1){
-                                  setState(() {
-                                    currentStep = currentStep-1;
-                                  });
-                                }
-                              },child: Icon(Icons.arrow_back, color: ColorConst.WHITE_COLOR)),
-                          const SizedBox(width: 20),
-                          getTxtWhiteColor(
-                              msg: str_const.create_account,
-                              fontSize: 18,
-                              fontWeight: FontWeight.w700)
-                        ],
-                      ),
-                    ),
-                    Column(
-                      children: [
-                        Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: getStepper(currentStep)),
-                        showUi()
-                      ],
-                    ),
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: getStepper(currentStep)),
+                    showUi()
                   ],
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
+        ],
       ),
-
     );
   }
 
@@ -85,7 +84,7 @@ class _login_screenState extends State<login_screen> {
     for (var i = 1; i <= 4; i++) {
       if (i <= pos) {
         widget.add(InkWell(
-          onTap: (){
+          onTap: () {
             setState(() {
               currentStep = i;
             });
@@ -104,7 +103,7 @@ class _login_screenState extends State<login_screen> {
         ));
       } else {
         widget.add(InkWell(
-          onTap: (){
+          onTap: () {
             setState(() {
               currentStep = i;
             });
@@ -135,26 +134,25 @@ class _login_screenState extends State<login_screen> {
   Widget showUi() {
     switch (currentStep) {
       case 1:
-        return EmailScreen((){
+        return EmailScreen(() {
           setState(() {
             currentStep = 2;
           });
         });
       case 2:
-        return CreatePass((){
+        return CreatePass(() {
           setState(() {
             currentStep = 3;
           });
         });
       case 3:
-        return PersonalInfo((){
+        return PersonalInfo(() {
           setState(() {
             currentStep = 4;
           });
         });
       case 4:
-        return ScheduleCall((){
-        });
+        return ScheduleCall(() {});
       default:
         return Container();
     }

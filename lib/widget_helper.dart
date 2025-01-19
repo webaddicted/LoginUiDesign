@@ -5,6 +5,7 @@ import 'package:suraj_assignment/AssetsConst.dart';
 import 'package:suraj_assignment/color_const.dart';
 import 'package:suraj_assignment/str_const.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+
 /// Author : Deepak Sharma(Webaddicted)
 /// Email : deepaksharmatheboss@gmail.com
 /// Profile : https://github.com/webaddicted
@@ -192,13 +193,13 @@ Widget raisedRoundColorBtn(String txt, Color color, Function btnClick) =>
           btnClick();
         },
         clipBehavior: Clip.antiAlias,
-        child: getTxtWhiteColor(
-            msg: txt, fontSize: 15, fontWeight: FontWeight.bold),
         style: ElevatedButton.styleFrom(
-            primary: color,
+            backgroundColor: color,
             minimumSize: Size(double.infinity, 50),
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10))),
+        child: getTxtWhiteColor(
+            msg: txt, fontSize: 15, fontWeight: FontWeight.bold),
       ),
       // child: RaisedButton(
       //   padding: EdgeInsets.only(top: 15, bottom: 15, left: 70, right: 70),
@@ -234,10 +235,9 @@ Widget dropDownField(
                 onTap: () => click,
                 decoration: InputDecoration(
                   counterText: '',
-                  contentPadding:
-                      const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+                  contentPadding: const EdgeInsets.symmetric(
+                      horizontal: 10.0, vertical: 10.0),
                   hintText: " - Choose Option -",
-
                   hintStyle: const TextStyle(
                       fontWeight: FontWeight.bold, color: Colors.black),
                 ),
@@ -255,6 +255,7 @@ Widget dropDownField(
     ),
   );
 }
+
 Widget edtTimeField(TextEditingController edtController, Function timeClick) {
   return TextFormField(
     onTap: () => timeClick,
@@ -349,26 +350,26 @@ Widget getCacheImage({
 Widget getPlaceHolder(int placeHolderPos, double height, double width) {
   switch (placeHolderPos) {
     case 0:
-    // LOGO
+      // LOGO
       return Container(
         width: width,
         height: height,
         child: Image.asset(AssetsConst.LOGO_IMG),
       );
     case 1:
-    // Grey Shade
+      // Grey Shade
       return Container(
         width: width,
         height: height,
         color: Colors.grey[400],
       );
-  // case 2:
-  //   // Upload
-  //   return Container(
-  //     width: width,
-  //     height: height,
-  //     child: Icon(Icons.upload_file),
-  //   );
+    // case 2:
+    //   // Upload
+    //   return Container(
+    //     width: width,
+    //     height: height,
+    //     child: Icon(Icons.upload_file),
+    //   );
     default:
       return Container(
         width: width,
@@ -377,4 +378,3 @@ Widget getPlaceHolder(int placeHolderPos, double height, double width) {
       );
   }
 }
-

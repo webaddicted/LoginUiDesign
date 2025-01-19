@@ -1,8 +1,7 @@
 class AssetsConst {
 //  {START FONT FAMILY}
   static const String APP_NAME = 'Flutter Demo';
-  static const String ZILLASLAB_FONT = 'Zillaslab';
-  static const String PT_FONTss = 'PT';
+  static const String PT_FONTss = 'Poppins';
 //  {END FONT FAMILY}
 
 //  {START IMAGES}
@@ -14,7 +13,6 @@ class AssetsConst {
   static const String NO_DATA_FOUND = 'assets/images/no_data_found.svg';
 
   static const String GET_START_BG_IMG = 'assets/images/getstart_bg.jpg';
-
 
 //  {END IMAGES}
 }

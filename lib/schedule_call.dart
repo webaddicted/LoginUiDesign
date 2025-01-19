@@ -20,10 +20,10 @@ class ScheduleCall extends StatelessWidget {
         children: [
           const SizedBox(height: 50),
           FloatingActionButton(
-            child: Icon(Icons.calendar_today, color: ColorConst.blue,),
             backgroundColor: ColorConst.WHITE_COLOR,
             onPressed: () {
-            }),
+            },
+            child: Icon(Icons.calendar_today, color: ColorConst.blue)),
           const SizedBox(height: 20),
           getTxtWhiteColor(
               msg: str_const.schedule_call,
